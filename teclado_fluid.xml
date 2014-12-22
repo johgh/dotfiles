@@ -1,0 +1,27 @@
+<!DOCTYPE patchbay>
+<patchbay version="0.3.8" name="teclado_fluid">
+ <output-sockets>
+  <socket exclusive="on" client="Keystation Mini 32" type="alsa-midi" name="teclado">
+   <plug>Keystation Mini 32 MIDI 1</plug>
+  </socket>
+  <socket exclusive="off" client="FluidSynth DSSI plugin" type="jack-audio" name="Fluid">
+   <plug>FluidSynth DSSI plugin out_1</plug>
+   <plug>FluidSynth DSSI plugin out_2</plug>
+  </socket>
+ </output-sockets>
+ <input-sockets>
+  <socket exclusive="off" client="system" type="jack-audio" name="Audio">
+   <plug>playback_3</plug>
+   <plug>playback_4</plug>
+  </socket>
+  <socket exclusive="off" client="FluidSynth DSSI plugin" type="alsa-midi" name="Fluid">
+   <plug>FluidSynth DSSI plugin</plug>
+  </socket>
+ </input-sockets>
+ <slots/>
+ <cables>
+  <cable output="teclado" input="Fluid" type="alsa-midi"/>
+  <cable output="Fluid" input="Audio" type="jack-audio"/>
+ </cables>
+</patchbay>
+

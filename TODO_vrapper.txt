@@ -1,0 +1,14 @@
+### TODO
+
+### VRAPPER NOTES
+* required plugins: exchange, arg, function, ipmotion, textobjline
+* disable eclipse shortcuts: <C-p>, <C-h>, <C-l>, <C-o>, <C-d>, <C-e>, <C-w>, <C-j>, <C-k>, <C-n>, <C-p>
+* reassign eclipse shortcuts: <C-f> -> open search dialog, <C-t> -> outline, <C-q> -> open resource, <C-p> -> F4
+* use eclipse C-i with selected text format active lines
+
+### BUGS VRAPPER
+* vnoremap . :normal .<CR> " :normal no existe en vrapper
+* se debería poder hacer let @+=@"
+* 3vp , e insert mode paste visual block lo junta todo en una linea
+* cw column mode no funciona -> con I si q va
+

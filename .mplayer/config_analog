@@ -1,0 +1,18 @@
+
+[default]
+# Write your default config options here!
+font="Ubuntu"
+fs="1"
+#afm=hwac3
+ac="hwdts,hwac3,"
+vo="xv"
+#ao=alsa
+ao="alsa:device=hw=0.0"
+mc="0.0001"
+subfont-osd-scale="2"
+af="volume=-15"
+
+[gnome-mplayer]
+msglevel=all=5
+vo=xv
+vf=eq2

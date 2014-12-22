@@ -1,0 +1,155 @@
+" VIM COMPATIBLE SETTINGS
+
+" set clipboard=unnamed
+
+" set nosmartindent
+" set autoindent
+
+" SMART SEARCH
+set hlsearch
+set incsearch
+" required for smartcase to work
+set ignorecase
+set smartcase
+
+" VISUAL OPTIONS
+set cursorline
+" lines to scroll when cursor leaves screen
+set scrolljump=5
+" minimum lines to keep above and below cursor
+set scrolloff=3
+
+" use indents of 4 spaces
+set shiftwidth=4
+" tabs are spaces, not tabs
+set expandtab
+" an indentation every four columns
+set tabstop=4
+" let backspace delete indent
+set softtabstop=4
+" round indent to the nearest multiple of shiftwidth
+set shiftround
+
+" show/hide special characters
+" set list
+
+"show line numbers
+set number
+
+" autochdir to the parent of the current file
+" set autochdir
+
+" Regex of character-classes which should be treated as word characters
+" set isk+=\$([a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)
+
+" detects bash and php vars as words
+" set iskeyword+=$
+
+" Visual shifting does not exit Visual mode
+" vnoremap < <gv
+" vnoremap > >gv
+
+" paste yanked text multiple times in visual mode (trick lost ->
+" exchange)
+vnoremap p pgvy
+
+" substitute from VERY start of line (unlike cc)
+nmap S 0C
+
+" enter new line above/below in normal mode
+nmap <BS> O<Esc>
+nmap <CR> o<Esc>
+
+" select around block in visual line mode
+" nnoremap <C-ç> viBV
+
+" navigation in normal/visual mode
+map <C-j> 3j
+map <C-k> 3k
+" needs remap to ipmotion to work
+map <C-h> {
+map <C-l> }
+
+" find start/end of block ({})
+nnoremap ç} $h%
+nnoremap ç{ %_
+vnoremap ç} $h%
+vnoremap ç{ %_
+" nnoremap } $h%
+" nnoremap { %_
+" vnoremap } $h%
+" vnoremap { %_
+" navigation in insert mode
+" imap <C-h> <LEFT>
+" imap <C-j> <DOWN>
+" imap <C-k> <UP>
+" imap <C-l> <RIGHT>
+
+" cursor moves to the end of pasted text (g reverse)
+" nnoremap p gp
+" nnoremap gp p
+" nnoremap gP P
+" nnoremap P gP
+
+" visual mode till EOL (not included)
+noremap vc v$h
+
+" yank till EOL (not included)
+noremap Y y$
+
+" yank/paste to system register
+vmap <C-c> "+y
+inoremap <C-v> <C-r>+
+
+" replace <C-v>
+inoremap \ <C-v>
+
+" exit insert mode
+imap <C-c> <esc>
+
+" exit insert mode
+nmap <C-c> :w<CR>
+" ctrl-c does not expand, so remap to <esc> required
+cmap <C-c> <esc>
+
+" leader mappings (,X)
+
+" keep <C-x> and <C-a> to cut and select-All
+nnoremap ,a <C-a>
+nnoremap ,x <C-x>
+
+" clear search highlight
+map ,h :nohlsearch<CR>
+
+
+" VRAPPER ONLY SETTINGS
+
+" dont clean indent after leaving insert mode
+set nocleanindent
+
+" go to normal mode after eclipse link mode
+" set exitlinkmode
+" set startnormalmode
+" set novisualmouse
+
+set noatomicinsert
+" set contentassistmode
+set noregexsearch
+
+" Alt remappings (send esc+alt) needed for not terminal vim (unbind shortcuts
+" from eclipse needed, impossible) gvim doesnt work either
+" map <A-o> <esc>o
+
+" ALT MAPPINGS (not compatible with terminal alt mappings which send esc key)
+imap <A-4> <esc>g~iwa
+
+" delete and leave unnamed register unchanged
+nmap <A-d> "_d
+nmap <A-x> "_x
+
+" set uppercase word (insert/visual/normal)
+vmap <A-4> ~
+nmap <A-4> g~iw
+
+" select inner block in visual line mode
+nnoremap <A-ç> vaBV

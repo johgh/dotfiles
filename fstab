@@ -1,0 +1,22 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/sda5 during installation
+UUID=ef187c7e-30a2-45f9-9854-f2cf60eedc01 /               ext4    errors=remount-ro 0       1
+# /home was on /dev/sda7 during installation
+UUID=d94a1f14-f979-4e60-9121-c108c7a17b6a /home           ext4    defaults        0       2
+#UUID=5c2f2f8e-0af5-4bd4-9488-c06a8de1f9ec /media/WD3.5-MEDIA  ext4 rw,noauto,user,noexec 0 0
+#UUID=726b8297-e95b-4c13-8255-f9706c3f04df /media/IO3.5-BACKUP ext4 rw,noauto,user,noexec 0 0
+#UUID=268A720E5895F837 /media/WD2.5-MEDIA ntfs rw,noauto,user,noexec 0 0
+UUID=bad18a93-1265-4724-9d5a-dd0375e4a35b /media/BOOK ext4 rw,noauto,user,noexec 0 0
+UUID=c04631ea-bf7d-46d5-b37f-d8137a33b3e1 /media/LC3.5-BCK ext4 rw,noauto,user,noexec 0 0
+#/dev/md0 /media/BOOK-BCK ext4 rw,noauto,user,noexec 0 0
+UUID=afbdd770-3743-4fd6-bda0-bab68946667b /media/BOOK-BCK ext4 rw,noauto,user,noexec 0 0
+#UUID=4650-B3E6 /media/PS3 vfat rw,noauto,user,noexec 0 0
+UUID=76e17614-8648-44d7-891b-9e18ba59d7ce /media/WD2.5-MEDIA/ ext4 rw,noauto,user,noexec 0 0
+UUID="DD69-3162" /media/PenI20 vfat rw,noauto,user,noexec 0 0
+UUID="8574-1C11" /media/Android vfat rw,noauto,user,noexec 0 0

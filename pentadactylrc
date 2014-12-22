@@ -1,0 +1,146 @@
+set guioptions=Tns
+ "hg7127
+ loadplugins '\.(js|penta)$'
+ group user
+ " vim: set ft=vim:
+
+"" {{{ Option
+" custom joh
+colorscheme solarized-light
+" go to n tab
+nmap <Leader>1 1gt
+nmap <Leader>2 2gt
+nmap <Leader>3 3gt
+nmap <Leader>4 4gt
+nmap <Leader>5 5gt
+nmap <Leader>6 6gt
+nmap <Leader>7 7gt
+nmap <Leader>8 8gt
+nmap <Leader>9 9gt
+"swap back and forward tabs/history
+nmap J :back<CR>
+nmap K :forward<CR>
+nmap H <Nop>
+nmap L <Nop>
+nmap H :tabprevious<CR>
+nmap L :tabnext<CR>
+map e g;b
+"nmap J :tabprevious<CR>
+"nmap K :tabnext<CR>
+"set titlestring="Pentadactyl"
+"set guioptions=snT
+
+" end custom editado por jordihv@gmail.com
+
+" complete search engine suguest
+" set complete=location,suggestion
+set complete=search,location
+
+" set guioptions=CBTbr
+
+"set editor=vim
+
+" Use home row letters for hints instead of numbers
+"set hintkeys='sadfjklewcmpgh'
+"set hintkeys='asdfjklñqweruiopzxcv12347890m'
+
+" only follow hints when press enter
+set followhints=1
+
+" Show destination links in 1=status line, 2=command line
+"set showstatuslinks=command
+
+" open things at new tab
+set newtab=all
+
+" set wild mode to show completions as you type
+"set wildmode=list:full
+set wildmode=list:longest,full
+
+" allow popups popup
+"set popups=tab,resized
+
+" only show the tab bar when there are multiple tabs
+"set showtabline=multitab
+
+" highlight the terms
+set hlfind
+
+" find as you type
+set incfind
+
+"" only consider case if an upper case char is used
+set findcase=smart
+
+" turn off the freakin' bell
+set noerrorbells
+set novisualbell
+javascript dactyl.beep = function() { return false; }
+
+" don't show autocomplete list until <Tab>
+"set autocomplete=
+
+"colorscheme penta
+"colorscheme vimium
+
+" Yank (copy) to default clipboard with Y
+" Will not yank to default clipboard by default.
+" See:
+" Issue 719 - dactyl - Copy with 'Y' is not pasted - A Vim-like five-fingered
+" interface for Firefox and other XULRunner-based apps. - Google Project Hosting
+" https://code.google.com/p/dactyl/issues/detail?id=719#c10
+js editor.defaultRegister="+"
+"" }}}
+"" {{{ Mapping [vimium]
+map , <Leader>
+
+" unset maps
+" nmap w <Nop>
+nmap d <Nop>
+nmap u <Nop>
+
+" auto add -tags option when adding bookmark
+nmap a a<Space>-tags<Space>
+
+" move
+nmap d <C-d>
+nmap u <C-u>
+
+nmap j 3<Down>
+nmap k 3<Up>
+
+nmap w :tabclose<CR>
+nmap x :quit<CR>
+nmap X :undo<CR>
+
+map <Leader>/ :set hlf!<CR>
+
+" Yank selected text to clipboard
+map -modes=n Y <yank-selection>
+
+" open addons manager
+nmap <Leader>a :dialog addons<CR>
+
+" private mode
+nmap <Leader>p :set private!<CR>
+
+" display download
+nmap <Leader>d :downloads<CR>
+
+"" U list closed tabs
+nmap <Leader>u :undo<Space>
+
+" workaround for copy paste in text boxes
+"map -m n,v,i,c,t <C-a> <Pass>
+"map -m n,v,i,c,t <C-c> <Pass>
+"map -m n,v,i,c,t <C-l> <Pass>
+"map -m n,v,i,c,t <C-p> <Pass>
+"map -m n,v,i,c,t <C-v> <Pass>
+"map -m n,v,i,c,t <C-x> <Pass>
+
+" {{{ Quickmarks
+qmark m https://mail.google.com
+qmark y https://www.youtube.com
+qmark e http://www.elpais.es
+qmark a http://www.amazon.es
+" }}}

@@ -1,0 +1,27 @@
+<!DOCTYPE patchbay>
+<patchbay version="0.3.8" name="qsynth">
+ <output-sockets>
+  <socket exclusive="off" client="qsynth" type="jack-audio" name="qsynth">
+   <plug>l_00</plug>
+   <plug>r_00</plug>
+  </socket>
+  <socket exclusive="off" client="Keystation Mini 32" type="alsa-midi" name="Keystation Mini 32">
+   <plug>Keystation Mini 32 MIDI 1</plug>
+  </socket>
+ </output-sockets>
+ <input-sockets>
+  <socket exclusive="off" client="system" type="jack-audio" name="system 2">
+   <plug>playback_3</plug>
+   <plug>playback_4</plug>
+  </socket>
+  <socket exclusive="off" client="FLUID Synth \([0-9]+\)" type="alsa-midi" name="FLUID Synth (6826)">
+   <plug>Synth input port \([0-9]+:0\)</plug>
+  </socket>
+ </input-sockets>
+ <slots/>
+ <cables>
+  <cable output="qsynth" input="system 2" type="jack-audio"/>
+  <cable output="Keystation Mini 32" input="FLUID Synth (6826)" type="alsa-midi"/>
+ </cables>
+</patchbay>
+

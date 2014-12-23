@@ -1,0 +1,21 @@
+[core]
+	editor = vim
+[color]
+	ui = auto
+[merge]
+	tool = meld
+[difftool]
+	prompt = false
+[user]
+	email = jordihv@gmail.com
+	name = joh
+[gui]
+	historybrowser = gitg
+[diff]
+	tool = meld
+[mergetool]
+	prompt = false
+[push]
+	default = simple
+[credential]
+	helper = cache

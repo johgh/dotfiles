@@ -16,6 +16,6 @@
 [mergetool]
 	prompt = false
 [push]
-	default = simple
+	default = matching
 [credential]
 	helper = cache

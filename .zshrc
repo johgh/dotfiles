@@ -103,6 +103,7 @@ alias gpull='git commit -a; git pull'
 alias gpush='git commit -a; git push'
 alias gdiff='git difftool origin/master'
 alias gmerge='git mergetool'
+alias glog='git log --graph --oneline --decorate'
 alias s='sudo'
 alias shutdown='sudo shutdown –h now' #user ALL=(ALL) NOPASSWD: /sbin/shutdown (/etc/sudoers)
 alias restart='sudo shutdown –r now' #user ALL=(ALL) NOPASSWD: /sbin/shutdown (/etc/sudoers)

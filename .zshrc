@@ -54,11 +54,12 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git github git-extras command-not-found vim-interaction history-substring-search cp)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+setopt autopushd
 
 export PATH="/home/jhv/bin:/home/jhv/bin/.untrackedfiles:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -135,8 +136,10 @@ stty -ixon -ixoff
 
 bindkey -v
 
-bindkey '^P' up-history
-bindkey '^N' down-history
+# bindkey '^P' up-history
+# bindkey '^N' down-history
+bindkey '^P' history-substring-search-up
+bindkey '^N' history-substring-search-down
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
@@ -146,6 +149,12 @@ function zle-line-init zle-keymap-select {
     VIM_PROMPT="%{$fg_bold[red]%} [% VIMODE]%  %{$reset_color%}"
     RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
     zle reset-prompt
+}
+
+function postCallVim
+{
+    WID=`xdotool search --name "/* - Vim"`
+    xdotool windowactivate $WID
 }
 
 zle -N zle-line-init

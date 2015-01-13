@@ -54,7 +54,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git github git-extras command-not-found vim-interaction history-substring-search cp)
+plugins=(git github git-extras command-not-found vim-interaction history-substring-search cp history)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -154,6 +154,10 @@ function zle-line-init zle-keymap-select {
 function postCallVim
 {
     WID=`xdotool search --name "/* - Vim"`
+    if [ -z $WID ]; then
+        gvim
+        WID=`xdotool search --name "/* - Vim"`
+    fi
     xdotool windowactivate $WID
 }
 

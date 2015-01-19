@@ -131,18 +131,36 @@ alias ma='ln -fs ~/.mplayer/config_analog ~/.mplayer/config; '
 alias m='pli -s -d 2'
 alias h='pli -s -d 1'
 
-# libera ctrl+s para poder usarlo con vim
+# free <C-S> so we can use it in vim
 stty -ixon -ixoff
 
+# vi mappings
 bindkey -v
+# C-S instead of ESC to enter Vi normal mode
+bindkey '^S' vi-cmd-mode
 
-# bindkey '^P' up-history
-# bindkey '^N' down-history
+## some standard bash keys so we can use it with vim mappings enabled
+# navigation
+bindkey '^[b' backward-word
+bindkey '^[f' forward-word
+# delete from cursor to beginning of line
+bindkey '^U' backward-kill-line
+# delete from cursor to end of line
+bindkey '^K' kill-line
+# delete previous word
+bindkey '^w' backward-kill-word
+# backspace
+bindkey '^h' backward-delete-char
+# uppercase word starting from cursor
+bindkey '^[u' up-case-word
+# we keep up-history and down-history bindings for the plugin history-substring-search
 bindkey '^P' history-substring-search-up
 bindkey '^N' history-substring-search-down
-bindkey '^?' backward-delete-char
-bindkey '^h' backward-delete-char
-bindkey '^w' backward-kill-word
+# go to beginning of line (^A is used by tmux)
+bindkey '^B' beginning-of-line
+# go to end of line
+bindkey '^E' end-of-line
+# incremental search backward
 bindkey '^r' history-incremental-search-backward
 
 function zle-line-init zle-keymap-select {
@@ -151,14 +169,20 @@ function zle-line-init zle-keymap-select {
     zle reset-prompt
 }
 
+function preCallVim
+{
+    PID=`ps -A | grep gvim`
+    # start gvim, if not started yet
+    if [ -z $PID ]; then
+        gvim
+        # wait until gvim starts so --remote-send works
+        while [ -z "`ps -A | grep gvim`" ]; do; done;
+    fi
+}
 function postCallVim
 {
-    WID=`xdotool search --name "/* - Vim"`
-    if [ -z $WID ]; then
-        gvim
-        WID=`xdotool search --name "/* - Vim"`
-    fi
-    xdotool windowactivate $WID
+    # raise gvim window
+    gvim --remote-send ":call foreground()<CR>"
 }
 
 zle -N zle-line-init

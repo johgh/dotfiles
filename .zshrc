@@ -149,6 +149,8 @@ bindkey '^U' backward-kill-line
 bindkey '^K' kill-line
 # delete previous word
 bindkey '^w' backward-kill-word
+# delete next word
+bindkey '^[d' kill-word
 # backspace
 bindkey '^h' backward-delete-char
 # uppercase word starting from cursor

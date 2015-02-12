@@ -1,20 +1,27 @@
+[user]
+	name = joh
+	email = jordihv@gmail.com
 [core]
 	editor = vim
-[color]
-	ui = auto
 [merge]
-	tool = meld
-[difftool]
-	prompt = false
-[user]
-	email = jordihv@gmail.com
-	name = joh
+	tool = fugitive
+[diff]
+	tool = gvimdiff
+[push]
+	default = matching
 [gui]
 	historybrowser = gitg
-[diff]
-	tool = meld
+[color]
+	ui = auto
+[difftool]
+	prompt = false
 [mergetool]
 	prompt = false
+[mergetool "fugitive"]
+	cmd = gvim -f -c \"Gdiff\" \"$MERGED\"
+[alias]
+	d = difftool
+	m = mergetool
 [push]
 	default = matching
 [credential]

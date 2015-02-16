@@ -1,12 +1,12 @@
 [user]
-	name = joh
-	email = jordihv@gmail.com
+	name = jorge
+	email = jhervas@direla.com
 [core]
 	editor = vim
 [merge]
 	tool = fugitive
 [diff]
-	tool = gvimdiff
+	tool = vimdiff
 [push]
 	default = matching
 [gui]
@@ -18,7 +18,7 @@
 [mergetool]
 	prompt = false
 [mergetool "fugitive"]
-	cmd = gvim -f -c \"Gdiff\" \"$MERGED\"
+	cmd = vim -f -c \"Gdiff\" \"$MERGED\"
 [alias]
 	d = difftool
 	m = mergetool

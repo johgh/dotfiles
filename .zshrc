@@ -179,12 +179,13 @@ function preCallVim
         gvim
         # wait until gvim starts so --remote-send works
         while [ -z "`ps -A | grep gvim`" ]; do; done;
+        sleep 0.5
     fi
 }
 function postCallVim
 {
     # raise gvim window
-    gvim --remote-send ":call foreground()<CR>"
+    gvim --remote-send ":call foreground()<CR>:silent bd 1<CR>"
 }
 
 zle -N zle-line-init

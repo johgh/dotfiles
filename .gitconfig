@@ -6,7 +6,7 @@
 [merge]
 	tool = fugitive
 [diff]
-	tool = vimdiff
+	tool = gvimdiff
 [push]
 	default = matching
 [gui]
@@ -22,11 +22,11 @@
 [alias]
 	d = difftool
 	m = mergetool
-    c = commit -m
-    p = !~/bin/push
-    a = add . --all
-    s = status
-    l = log
+    	c = commit -m
+    	p = !~/bin/push
+    	a = add . --all
+    	s = status
+    	l = log
 [push]
 	default = matching
 [credential]

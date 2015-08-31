@@ -18,7 +18,7 @@
 [mergetool]
 	prompt = false
 [mergetool "fugitive"]
-	cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+	cmd = gvim -f -c \"Gdiff\" \"$MERGED\"
 [alias]
 	d = difftool
 	m = mergetool

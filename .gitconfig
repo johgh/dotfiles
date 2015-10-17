@@ -1,59 +1,59 @@
 [user]
-        name = johgh
-        email = jordihv@gmail.com
+    name = johgh
+    email = jordihv@gmail.com
 [core]
-        editor = vim
-        # global .gitignore file
-        excludesfile = ~/.gitignore
+    editor = vim
+    # global .gitignore file
+    excludesfile = ~/.gitignore
 [color]
-        ui = auto
+    ui = auto
 [credential]
-        helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+    helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 [gui]
-        historybrowser = gitg
+    historybrowser = gitg
 [push]
-        default = matching
+    default = matching
 
 
 ### ALIAS #########################################
 [alias]
-        # -d opens meld in directory mode (if meld is used as difftool)
-        d = difftool -d
-        m = mergetool
-        s = status
-        c = commit
-        # commit adding previously all files except deleted ones
-        ca = commit -a
-        co = checkout
-        # add all project files (including deleted ones)
-        a = add -A :/
-        # show minimal log with branch graph
-        l = log --graph --oneline --decorate --all
-        # show log with patches (for viewing diff history). File parameter is optional
-        lp = log -p
-        # show log with patches, follows file even if its renamed, file parameter is mandatory
-        lf = log --follow -p
+    # -d opens meld in directory mode (if meld is used as difftool)
+    d = difftool -d
+    m = mergetool
+    s = status
+    c = commit
+    # commit adding previously all files except deleted ones
+    ca = commit -a
+    co = checkout
+    # add all project files (including deleted ones)
+    a = add -A :/
+    # show minimal log with branch graph
+    l = log --graph --oneline --decorate --all
+    # show log with patches (for viewing diff history). File parameter is optional
+    lp = log -p
+    # show log with patches, follows file even if its renamed, file parameter is mandatory
+    lf = log --follow -p
 
 ### DIFF ##########################################
 [diff]
-        # tool = gvimdiff
-        tool = meld
+    # tool = gvimdiff
+    tool = meld
 [difftool]
-        prompt = false
+    prompt = false
 
 ### MERGE #########################################
 [merge]
-        # tool = fugitive
-        tool = meld
-        ff = false
+    # tool = fugitive
+    tool = meld
+    ff = false
 [mergetool]
-        prompt = false
+    prompt = false
 # [mergetool "fugitive"]
-        # cmd = gvim -f -c \"Gdiff\" \"$MERGED\"
+#     cmd = gvim -f -c \"Gdiff\" \"$MERGED\"
 
 
 ### REBASE ########################################
 [branch]
-        autosetuprebase = always
+    autosetuprebase = always
 [branch "master"]
-        rebase = yes
+    rebase = yes

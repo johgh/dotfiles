@@ -43,8 +43,10 @@
 
 ### MERGE #########################################
 [merge]
-    # tool = fugitive
+    # use meld to resolve conflicts
     tool = meld
+    # tool = fugitive
+    # force merge commits instead of doing fast-forward merge
     ff = false
 [mergetool]
     prompt = false
@@ -54,6 +56,8 @@
 
 ### REBASE ########################################
 [branch]
+    # force rebase when pulling always on new branches
     autosetuprebase = always
 [branch "master"]
+    # force rebase when pulling on master
     rebase = yes

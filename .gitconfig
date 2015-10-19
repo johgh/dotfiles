@@ -27,8 +27,8 @@
     co = checkout
     # add all project files (including deleted ones)
     a = add -A :/
-    # show minimal log with branch graph
-    l = log --graph --oneline --decorate --all
+    # show oneliner colorful log with branch graph
+    l = log --pretty=format:'%C(red)%h  %Cblue%ad %Cgreen%d %C(yellow)%s %Creset%an' --all --graph --date=local
     # show log with patches (for viewing diff history). File parameter is optional
     lp = log -p
     # show log with patches, follows file even if its renamed, file parameter is mandatory

@@ -50,6 +50,8 @@
     ff = false
 [mergetool]
     prompt = false
+    # remove .orig files
+    keepBackup = false
 # [mergetool "fugitive"]
 #     cmd = gvim -f -c \"Gdiff\" \"$MERGED\"
 

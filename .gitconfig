@@ -23,7 +23,7 @@
     s = status
     c = commit
     p = push
-    pr = "!git fetch; git rebase --autostash FETCH_HEAD"
+    r = "!git fetch; git rebase --autostash FETCH_HEAD"
     # commit adding previously all files except deleted ones
     ca = commit -a
     co = checkout

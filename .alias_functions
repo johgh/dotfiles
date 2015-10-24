@@ -1,0 +1,70 @@
+## ZSH/BASH ALIASES/FUNCTION#################################################################
+
+# open file with associated GUI app
+o() {
+    nohup xdg-open "$1" > /dev/null 2> /dev/null
+}
+# shortcuts
+alias lt='ls -lrt'
+alias c='clear'
+alias s='sudo'
+alias shutdown='sudo shutdown –h now' #user ALL=(ALL) NOPASSWD: /sbin/shutdown (/etc/sudoers)
+alias restart='sudo shutdown –r now' #user ALL=(ALL) NOPASSWD: /sbin/shutdown (/etc/sudoers)
+alias suspend='sudo pm-suspend' #user ALL=(ALL) NOPASSWD: /usr/sbin/pm-suspend (/etc/sudoers)
+# apt shortcuts
+alias inst='sudo apt-get install'
+alias search='apt-cache search'
+alias purge='sudo apt-get purge'
+alias remove='sudo apt-get remove'
+alias update='sudo apt-get update'
+alias upgrade='update;sudo apt-get dist-upgrade'
+alias show='sudo apt-cache show'
+# mount formatted
+alias mountt='mount |column -t'
+# show php log
+alias plog='tail -f -n 100 /var/log/php_errors.log | ccze -A'
+# repeat last command with sudo
+alias fuck='sudo !!'
+
+# open file in existing gvim window
+v() {
+    gvim --remote "$1" > /dev/null 2> /dev/null
+    gvim --remote-send ":call foreground()<CR>:silent bd 1<CR>"
+}
+
+
+## GIT ALIASES + AUTOPASS ###################################################################
+
+# default git password
+export GIT_PASS='PASS_HERE'
+
+git() {
+    declare -A my_aliases
+    declare -A pass_commands
+
+    # ALIAS (to allow overriding of git commands)
+    my_aliases[pull]="r"
+    my_aliases[push]="p"
+    # git config --global alias.r '!git fetch; git rebase --autostash FETCH_HEAD'
+    # git config --global alias.p push
+
+    # NO PASSWORD
+    pass_commands=$my_aliases
+    # to add commands/alias:
+    #pass_commands+=('new_command_or_alias')
+
+    # translate $my_aliases
+    if [ ${my_aliases[$1]+abc} ]; then
+        1=${my_aliases[$1]}
+    fi
+
+    # send password for $pass_commands
+    if [[ " ${pass_commands[@]} " =~ " $1 " ]]; then
+        $HOME/bin/ansbot '*?assword*' $GIT_PASS ''/usr/bin/git "$@"''
+    else
+        /usr/bin/git "$@"
+    fi
+}
+
+# original git (doesn't call above alias)
+alias Git='/usr/bin/git'

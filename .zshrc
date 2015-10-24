@@ -54,14 +54,14 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git github git-extras command-not-found vim-interaction history-substring-search cp history)
+plugins=(git github git-extras command-not-found history-substring-search cp history)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 setopt autopushd
 
-export PATH="/home/jhv/bin:/home/jhv/bin/.untrackedfiles:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/home/jhv/bin:/home/jhv/bin/untrackedfiles:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -89,47 +89,20 @@ export PATH="/home/jhv/bin:/home/jhv/bin/.untrackedfiles:/usr/local/sbin:/usr/lo
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-openapp(){ nohup xdg-open $1 > /dev/null 2> /dev/null }; alias o=openapp
-addlink(){ ln -fs ~/workspace/$1/$2/Public/ /var/www/$1 }; alias add=addlink
-alias rech='sudo chown -R www-data:www-data'
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 
-# shortcuts
-alias lt='ls -lrt'
-alias c='clear'
-alias gpull='git commit -a; git pull'
-alias gpush='git commit -a; git push'
-alias gdiff='git difftool origin/master'
-alias gmerge='git mergetool'
-alias glog='git log --graph --oneline --decorate'
-alias s='sudo'
-alias shutdown='sudo shutdown –h now' #user ALL=(ALL) NOPASSWD: /sbin/shutdown (/etc/sudoers)
-alias restart='sudo shutdown –r now' #user ALL=(ALL) NOPASSWD: /sbin/shutdown (/etc/sudoers)
-alias suspend='sudo pm-suspend' #user ALL=(ALL) NOPASSWD: /usr/sbin/pm-suspend (/etc/sudoers)
-#alias mount='mount |column -t'
-alias inst='sudo apt-get install'
-alias search='apt-cache search'
-alias purge='sudo apt-get purge'
-alias remove='sudo apt-get remove'
-alias update='sudo apt-get update'
-alias upgrade='update;sudo apt-get dist-upgrade'
-alias show='sudo apt-cache show'
-alias plog='tail -f -n 100 /var/log/php_errors.log | ccze -A'
-alias fuck='sudo !!'
+# load my alias functions file
+. $HOME/.alias_functions
 
-# symfony
-alias sm='cd /var/www/Symfony'
-alias smc='php /var/www/Symfony/app/console'
-alias smh='cd /var/www/Symfony/src/PP/EcomBundle'
-
-# custom
+# local only aliases
 alias md='ln -fs ~/.mplayer/config_digital ~/.mplayer/config; '
 alias ma='ln -fs ~/.mplayer/config_analog ~/.mplayer/config; '
 alias m='pli -s -d 2'
 alias h='pli -s -d 1'
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 
 # free <C-S> so we can use it in vim
 stty -ixon -ixoff
@@ -169,23 +142,6 @@ function zle-line-init zle-keymap-select {
     VIM_PROMPT="%{$fg_bold[red]%} [% VIMODE]%  %{$reset_color%}"
     RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
     zle reset-prompt
-}
-
-function preCallVim
-{
-    PID=`ps -A | grep gvim`
-    # start gvim, if not started yet
-    if [ -z $PID ]; then
-        gvim
-        # wait until gvim starts so --remote-send works
-        while [ -z "`ps -A | grep gvim`" ]; do; done;
-        sleep 0.5
-    fi
-}
-function postCallVim
-{
-    # raise gvim window
-    gvim --remote-send ":call foreground()<CR>:silent bd 1<CR>"
 }
 
 zle -N zle-line-init

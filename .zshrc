@@ -1,4 +1,5 @@
 export SHELL=/bin/bash
+export TERM=screen-256color
 if [ "$TMUX" = "" ]; then 
     tmux -2
     # update vim config at startup

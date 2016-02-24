@@ -95,6 +95,7 @@ export PATH="/home/jhv/bin:/home/jhv/bin/untrackedfiles:/usr/local/sbin:/usr/loc
 . $HOME/.alias_functions
 
 # local only aliases
+alias clswap='mv ~/.vimswap/*.swp ~/.vimswap/kk'
 alias md='ln -fs ~/.mplayer/config_digital ~/.mplayer/config; '
 alias ma='ln -fs ~/.mplayer/config_analog ~/.mplayer/config; '
 alias m='pli -s -d 2'
@@ -148,3 +149,8 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 export KEYTIMEOUT=1
+
+# export http_proxy="http://user:pass@server:port"
+# export https_proxy="http://user:pass@server:port"
+# export ftp_proxy="http://user:pass@server:port"
+

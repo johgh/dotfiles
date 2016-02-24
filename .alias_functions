@@ -28,7 +28,11 @@ alias fuck='sudo !!'
 
 # open file in existing gvim window
 v() {
-    gvim --remote "$1" > /dev/null 2> /dev/null
+    if [ -z $1 ]; then
+        gvim --remote . > /dev/null 2> /dev/null
+    else
+        gvim --remote "$1" > /dev/null 2> /dev/null
+    fi
     gvim --remote-send ":call foreground()<CR>:silent bd 1<CR>"
 }
 

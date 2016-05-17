@@ -13,5 +13,5 @@
 #guake -t # volver a ocultar
 
 # abre tab cuando cambia el fichero phplog
-while inotifywait -e close_write /var/log/php_errors.log; do guake -s 0; guake -t; tmux select-window -t 1; done > /dev/null 2>&1 &
+while inotifywait -e close_write /var/log/php_errors.log; do guake --show 0; guake -t; tmux select-window -t 1; done > /dev/null 2>&1 &
 guake

@@ -1,8 +1,8 @@
 bind-key D new -s Dev \; \
     new-window -n 'phplog' -c $HOME \; \
     send-keys 'plog' 'Enter' \; \
-    new-window -n 'mysql->DB' -c $HOME \; \
-    send-keys 'mysql' 'Enter' \; \
+    #new-window -n 'mysql->DB' -c $HOME \; \
+    #send-keys 'mysql' 'Enter' \; \
     #new-window -n 'terminal' -c $HOME \; \
     #send-keys 'tmux -2' 'Enter' \; \
     select-window -t 0

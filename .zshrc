@@ -10,6 +10,7 @@ if [ "$TMUX" = "" ]; then
 fi
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export PROXYPASS="PASS_HERE"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -150,7 +151,7 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 export KEYTIMEOUT=1
 
-# export http_proxy="http://user:pass@server:port"
-# export https_proxy="http://user:pass@server:port"
-# export ftp_proxy="http://user:pass@server:port"
+export http_proxy="http://$USER:$PROXYPASS@pluton:3128"
+export https_proxy="http://$USER:$PROXYPASS@pluton:3128"
+export ftp_proxy="http://$USER:$PROXYPASS@pluton:3128"
 

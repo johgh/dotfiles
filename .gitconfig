@@ -3,6 +3,8 @@
     email = jordihv@gmail.com
 [url "https://johgh@github.com"]
     insteadOf = https://github.com
+[url "https://johgh@gitlab.com"]
+    insteadOf = https://gitlab.com
 [core]
     editor = vim
     # global .gitignore file

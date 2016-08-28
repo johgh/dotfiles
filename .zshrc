@@ -63,7 +63,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 setopt autopushd
 
-export PATH="/home/jhv/bin:/home/jhv/bin/untrackedfiles:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="$HOME/bin:$HOME/bin/untrackedfiles:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -151,7 +151,7 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 export KEYTIMEOUT=1
 
-export http_proxy="http://$USER:$PROXYPASS@pluton:3128"
-export https_proxy="http://$USER:$PROXYPASS@pluton:3128"
-export ftp_proxy="http://$USER:$PROXYPASS@pluton:3128"
+# export http_proxy="http://$USER:$PROXYPASS@server:111"
+# export https_proxy="http://$USER:$PROXYPASS@server:111"
+# export ftp_proxy="http://$USER:$PROXYPASS@server:111"
 

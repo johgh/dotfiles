@@ -1,6 +1,8 @@
 [user]
-    name = jorge
-    email = jhervas@direla.com
+    name = Jorge Hervás Vigueras
+    email = jordihv@gmail.com
+[url "https://johgh@github.com"]
+    insteadOf = https://github.com
 [core]
     editor = vim
     # global .gitignore file
@@ -8,7 +10,7 @@
 [color]
     ui = auto
 [credential]
-    helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+    ; helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 [gui]
     historybrowser = gitg
 [push]

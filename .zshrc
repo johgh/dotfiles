@@ -97,8 +97,8 @@ export PATH="$HOME/bin:$HOME/bin/untrackedfiles:/usr/local/sbin:/usr/local/bin:/
 
 # local only aliases
 alias clswap='mv ~/.vimswap/*.swp ~/.vimswap/kk'
-alias md='ln -fs ~/.mplayer/config_digital ~/.mplayer/config; '
-alias ma='ln -fs ~/.mplayer/config_analog ~/.mplayer/config; '
+alias md='ln -fs ~/.config/mpv/config_digital ~/.config/mpv/mpv.conf; '
+alias ma='ln -fs ~/.config/mpv/config_analog ~/.config/mpv/mpv.conf; '
 alias m='pli -s -d 2'
 alias h='pli -s -d 1'
 

@@ -4,6 +4,10 @@
 o() {
     nohup xdg-open "$1" > /dev/null 2> /dev/null
 }
+# list directories sorted by file size. e.g.: dus '*/*'
+dus() {
+    du -h "$1" | sort -h
+}
 # shortcuts
 alias lt='ls -lrt'
 alias c='clear'

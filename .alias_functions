@@ -8,6 +8,28 @@ o() {
 dus() {
     du -h "$1" | sort -h
 }
+# git commit & pull+push shortcut
+push() {
+    message='no comment'
+    while getopts ":m:a" o; do
+    case "${o}" in
+        m)
+            message=${OPTARG}
+            ;;
+        a)
+            git add --all ./
+            ;;
+        *)
+            echo -e "Invalid parameter. Valid (optional) parameters are:\n-a (add all files)\n-m <commit message>\n"
+            return
+            ;;
+    esac
+    done
+    echo "$message"
+    git commit -m "$message"
+    git pull
+    git push
+}
 # shortcuts
 alias lt='ls -lrt'
 alias c='clear'

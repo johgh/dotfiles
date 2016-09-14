@@ -25,7 +25,6 @@ push() {
             ;;
     esac
     done
-    echo "$message"
     git commit -m "$message"
     git pull
     git push
@@ -57,18 +56,6 @@ v() {
     gvim --remote "$1" > /dev/null 2> /dev/null
     gvim --remote-send ":call foreground()<CR>:silent bd 1<CR>"
 }
-
-bl() {
-    cd ~/b
-    createbook.sh $@ BL.md
-    read
-    . $HOME/conf/.alias_functions
-    git add *.md header.tex intro.tex footer.tex
-    git commit -m "'BL update: `date`'"
-    git p
-    cd -
-}
-
 
 ## GIT ALIASES + AUTOPASS ###################################################################
 

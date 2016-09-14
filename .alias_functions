@@ -57,19 +57,6 @@ v() {
     gvim --remote-send ":call foreground()<CR>:silent bd 1<CR>"
 }
 
-bl() {
-    cd ~/b
-    genlatexdoc $@ -i body -i footer BL.md
-    read
-    . $HOME/conf/.alias_functions
-    git add *.md header.tex footer.tex
-    git commit -m "'BL update: `date`'"
-    git p
-    killall evince
-    cd -
-}
-
-
 ## GIT ALIASES + AUTOPASS ###################################################################
 
 # default git password

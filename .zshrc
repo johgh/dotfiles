@@ -155,3 +155,9 @@ export KEYTIMEOUT=1
 # export https_proxy="http://$USER:$PROXYPASS@server:111"
 # export ftp_proxy="http://$USER:$PROXYPASS@server:111"
 
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+
+# export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

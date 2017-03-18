@@ -156,5 +156,12 @@ export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
+
+# doesnt show .gitignore, but yes hidden files
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+# doesnt show .gitignore nor hidden files
+# export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 # export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

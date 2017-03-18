@@ -3,10 +3,7 @@ export TERM=screen-256color
 if [ "$TMUX" = "" ]; then 
     tmux -2
     # update vim config at startup
-    cd $HOME/.vim
-    git pull
-    git submodule update --init --recursive
-    cd -
+    nvim +PlugUpdate +qall
 fi
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh

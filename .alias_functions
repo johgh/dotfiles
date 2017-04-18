@@ -53,14 +53,15 @@ alias fuck='sudo !!'
 
 # open file in existing gvim window
 v() {
-    gvim --remote "$1" > /dev/null 2> /dev/null
-    gvim --remote-send ":call foreground()<CR>:silent bd 1<CR>"
+    # gvim --remote "$1" > /dev/null 2> /dev/null
+    # gvim --remote-send ":call foreground()<CR>:silent bd 1<CR>"
+    nvim "$1"
 }
 
 ## GIT ALIASES + AUTOPASS ###################################################################
 
 # default git password
-export GIT_PASS='PASS_HERE'
+export GIT_PASS='2E3r+4fg'
 
 git() {
     declare -A my_aliases

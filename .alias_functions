@@ -61,7 +61,7 @@ v() {
 ## GIT ALIASES + AUTOPASS ###################################################################
 
 # default git password
-export GIT_PASS='2E3r+4fg'
+export GIT_PASS='PASS'
 
 git() {
     declare -A my_aliases

@@ -1,0 +1,51 @@
+{
+    "child": {
+        "child1": {
+            "directory": "\/home\/jorge",
+            "height": 766,
+            "profile": "2b7c4080-0ddd-46c5-8f23-563fd3ba789d",
+            "readOnly": false,
+            "synchronizedInput": true,
+            "type": "Terminal",
+            "uuid": "a6bc10ca-73f7-45b4-8b4f-d1871cee970d",
+            "width": 682
+        },
+        "child2": {
+            "child1": {
+                "directory": "\/home\/jorge",
+                "height": 383,
+                "profile": "2b7c4080-0ddd-46c5-8f23-563fd3ba789d",
+                "readOnly": false,
+                "synchronizedInput": true,
+                "type": "Terminal",
+                "uuid": "9ade12bd-f3ad-4ae7-9a04-55ce8e65e1c8",
+                "width": 681
+            },
+            "child2": {
+                "directory": "\/home\/jorge",
+                "height": 382,
+                "profile": "2b7c4080-0ddd-46c5-8f23-563fd3ba789d",
+                "readOnly": false,
+                "synchronizedInput": true,
+                "type": "Terminal",
+                "uuid": "be802d8a-1ac1-4139-8226-9965411af821",
+                "width": 681
+            },
+            "orientation": 1,
+            "position": 50,
+            "ratio": 0.5,
+            "type": "Paned"
+        },
+        "orientation": 0,
+        "position": 50,
+        "ratio": 0.5,
+        "type": "Paned"
+    },
+    "height": 766,
+    "name": "Default",
+    "synchronizedInput": false,
+    "type": "Session",
+    "uuid": "a214ad04-3543-4446-ba84-b68117be1624",
+    "version": "1.0",
+    "width": 1364
+}

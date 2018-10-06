@@ -101,6 +101,8 @@ export PATH="$HOME/bin:$HOME/bin/untrackedfiles:/usr/local/sbin:/usr/local/bin:/
 # load my alias functions file
 . $HOME/.alias_functions
 
+export ubu='jorge@192.168.1.33'
+
 # local only aliases
 alias clswap='mv ~/.vimswap/*.swp ~/.vimswap/kk'
 alias md='ln -fs ~/.config/mpv/config_digital ~/.config/mpv/mpv.conf; '

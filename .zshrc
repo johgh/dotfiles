@@ -1,10 +1,10 @@
 export SHELL=/bin/bash
-export TERM=screen-256color
-if [ "$TMUX" = "" ]; then 
-    tmux -2
-    # update vim config at startup
-    nvim +PlugUpdate +qall
-fi
+# export TERM=screen-256color
+# if [ "$TMUX" = "" ]; then 
+#     tmux -2
+#     # update vim config at startup
+#     nvim +PlugUpdate +qall
+# fi
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export PROXYPASS="PASS_HERE"

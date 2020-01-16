@@ -61,36 +61,36 @@ v() {
 ## GIT ALIASES + AUTOPASS ###################################################################
 
 # default git password
-export GIT_PASS='PASS'
+export GIT_PASS='MY_PASS'
 
-git() {
-    declare -A my_aliases
-
-    # ALIAS (to allow overriding of git commands)
-    my_aliases[pull]="r"
-    my_aliases[push]="p"
-    # git config --global alias.r '!git fetch; git rebase --autostash FETCH_HEAD'
-    # git config --global alias.p push
-
-    # NO PASSWORD
-    pass_commands=(${my_aliases[*]})
-    # pass_commands=$my_aliases
-    # to add commands/alias:
-    #pass_commands+=('new_command_or_alias')
-
-    # translate $my_aliases
-    cmd=$1
-    if [ ${my_aliases[$cmd]+abc} ]; then
-        cmd=${my_aliases[$cmd]}
-    fi
-
-    # send password for $pass_commands
-    if [[ " ${pass_commands[@]} " =~ " $cmd " ]]; then
-        $HOME/bin/ansbot '*?assword*' $GIT_PASS ''/usr/bin/git "$@"''
-    else
-        /usr/bin/git "$@"
-    fi
-}
+# git() {
+#     declare -A my_aliases
+# 
+#     # ALIAS (to allow overriding of git commands)
+#     my_aliases[pull]="r"
+#     my_aliases[push]="p"
+#     # git config --global alias.r '!git fetch; git rebase --autostash FETCH_HEAD'
+#     # git config --global alias.p push
+# 
+#     # NO PASSWORD
+#     pass_commands=(${my_aliases[*]})
+#     # pass_commands=$my_aliases
+#     # to add commands/alias:
+#     #pass_commands+=('new_command_or_alias')
+# 
+#     # translate $my_aliases
+#     cmd=$1
+#     if [ ${my_aliases[$cmd]+abc} ]; then
+#         cmd=${my_aliases[$cmd]}
+#     fi
+# 
+#     # send password for $pass_commands
+#     if [[ " ${pass_commands[@]} " =~ " $cmd " ]]; then
+#         $HOME/bin/ansbot '*?assword*' $GIT_PASS ''/usr/bin/git "$@"''
+#     else
+#         /usr/bin/git "$@"
+#     fi
+# }
 
 # original git (doesn't call above alias)
-alias Git='/usr/bin/git'
+# alias Git='/usr/bin/git'

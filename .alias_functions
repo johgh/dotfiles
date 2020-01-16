@@ -58,10 +58,11 @@ v() {
     nvim "$1"
 }
 
+# OBSOLETO: usar mejor credentials.helper = store (guarda pass en fichero plano .git-credentials)
 ## GIT ALIASES + AUTOPASS ###################################################################
 
 # default git password
-export GIT_PASS='MY_PASS'
+# export GIT_PASS='MY_PASS'
 
 # git() {
 #     declare -A my_aliases

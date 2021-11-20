@@ -53,7 +53,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git github git-extras command-not-found history-substring-search cp history)
+plugins=(git github git-extras laravel command-not-found history-substring-search cp history)
 
 source $ZSH/oh-my-zsh.sh
 

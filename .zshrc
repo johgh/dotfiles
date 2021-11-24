@@ -1,3 +1,6 @@
+# preserves current working directory!!! hardcoded, because /etc/profile.d/vte.sh not founded
+. /etc/profile.d/vte-2.91.sh
+
 export SHELL=/bin/bash
 # export TERM=screen-256color
 # if [ "$TMUX" = "" ]; then 
@@ -58,9 +61,10 @@ plugins=(git github git-extras laravel command-not-found history-substring-searc
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-setopt autopushd
+# now is enabled by default: this seems to untoggle autopushd ??!!
+# setopt autopushd
 
-export PATH="$HOME/bin:$HOME/bin/untrackedfiles:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="$HOME/bin:$HOME/bin/untrackedfiles:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment

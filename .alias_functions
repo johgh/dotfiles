@@ -47,9 +47,12 @@ alias show='sudo apt-cache show'
 # mount formatted
 alias mountt='mount |column -t'
 # show php log
-alias plog='tail -f -n 100 /var/log/php_errors.log | ccze -A'
+alias llog='tail -f -n 100 ./storage/logs/laravel.log | ccze -A'
 # repeat last command with sudo
 alias fuck='sudo !!'
+# sail (laravel docker)
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+alias artisan='sail php artisan'
 
 # open file in existing gvim window
 v() {

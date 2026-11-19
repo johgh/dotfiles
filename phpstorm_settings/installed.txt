@@ -1,0 +1,3 @@
+de.espend.idea.laravel
+io.zhile.research.ide-eval-resetter
+ru.adelf.idea.dotenv

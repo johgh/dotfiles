@@ -1,0 +1,12 @@
+<application>
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="3e4fac8b-2643-4453-b97d-190895a0f787" name="local" url="http://localhost">
+        <fileTransfer accessType="LOCAL" port="0" />
+      </webServer>
+      <webServer id="5977b4ae-84b2-46f8-bf48-366d6a5d3172" name="localhost:8000" url="http://localhost:8000">
+        <fileTransfer accessType="LOCAL" port="0" />
+      </webServer>
+    </option>
+  </component>
+</application>

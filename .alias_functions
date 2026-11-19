@@ -53,6 +53,8 @@ alias fuck='sudo !!'
 # sail (laravel docker)
 alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 alias artisan='sail php artisan'
+# symfony console
+alias sf='docker-compose exec php bin/console'
 
 # open file in existing gvim window
 v() {

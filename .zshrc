@@ -65,6 +65,7 @@ source $ZSH/oh-my-zsh.sh
 # setopt autopushd
 
 export PATH="$HOME/bin:$HOME/bin/untrackedfiles:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+export PATH="$HOME/.symfony5/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment

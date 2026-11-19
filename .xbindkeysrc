@@ -1,0 +1,4 @@
+"xdotool click 4"
+control+shift+prior
+"xdotool click 5"
+control+shift+next

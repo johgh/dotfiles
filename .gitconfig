@@ -16,8 +16,10 @@
     ; helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 [gui]
     historybrowser = gitg
+	pruneduringfetch = true
 [push]
     default = matching
+	recurseSubmodules = check
 
 
 ### ALIAS #########################################
@@ -70,3 +72,16 @@
 [branch "master"]
     # force rebase when pulling on master
     rebase = yes
+[gc]
+	autoDetach = false
+[commit]
+	gpgSign = false
+[smartgit "submodule"]
+	fetchalways = false
+	update = true
+	initializenew = true
+[taggrouping]
+	groups = 
+	singles = 
+[url "git@github.com:"]
+	insteadOf = https://github.com/

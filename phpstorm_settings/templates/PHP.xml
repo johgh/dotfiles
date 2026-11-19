@@ -1,0 +1,12 @@
+<templateSet group="PHP">
+  <template name="-" value="-&gt;" description="arrow" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="=" value="=&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+</templateSet>
